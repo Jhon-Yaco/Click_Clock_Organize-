@@ -27,22 +27,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function verRecordatorios() {
         const lista = document.getElementById('lista-recordatorios');
-        lista.innerHTML = '';
-
-        recordatorios.forEach((recordatorio, index) => {
-            const li = document.createElement('li');
-            li.innerHTML = `${recordatorio.mensaje} - ${recordatorio.fecha} ${recordatorio.hora} 
-                <button class="btn-eliminar" data-index="${index}">Eliminar</button>`;
-            lista.appendChild(li);
-        });
-
-        document.querySelectorAll('.btn-eliminar').forEach(boton => {
-            boton.addEventListener('click', function () {
-                eliminarRecordatorio(this.getAttribute('data-index'));
-            });
-        });
+        if (lista.style.display === "none" || lista.style.display === "") {
+            lista.style.display = "block";
+            lista.innerHTML = '';
+    
+            if (recordatorios.length === 0) {
+                const li = document.createElement('li');
+                li.innerHTML = 'No hay recordatorios';
+                lista.appendChild(li);
+            } else {
+                recordatorios.forEach((recordatorio, index) => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `${recordatorio.mensaje} - ${recordatorio.fecha} ${recordatorio.hora} 
+                        <button class="btn-eliminar" data-index="${index}">Eliminar</button>`;
+                    lista.appendChild(li);
+                });
+    
+                document.querySelectorAll('.btn-eliminar').forEach(boton => {
+                    boton.addEventListener('click', function () {
+                        eliminarRecordatorio(this.getAttribute('data-index'));
+                    });
+                });
+            }
+        } else {
+            lista.style.display = "none";
+        }
     }
-
     function eliminarRecordatorio(index) {
         recordatorios.splice(index, 1);
         guardarRecordatorios();
@@ -78,5 +88,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     setInterval(verificarRecordatorios, 60000); // Verificar cada minuto
-    verRecordatorios();
+    document.getElementById('lista-recordatorios').style.display = "none";
 });

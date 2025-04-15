@@ -69,6 +69,15 @@ body.alarma-page #area-alarmas pre {
     text-align: center;
 }
 
+#lista-recordatorios {
+    display: none;
+}
+
+#lista-alarmas {
+    display: none;
+}
+
+
 .cronometro-container {
     margin: 50px auto; /* Centra el cronómetro en la página */
     max-width: 400px; /* Define un ancho máximo para el cronómetro */

@@ -52,8 +52,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     verAlarmasBtn.addEventListener("click", function () {
-        actualizarListaAlarmas();
+        if (areaAlarmas.style.display === "none") {
+            areaAlarmas.style.display = "block";
+            if (alarmas.length === 0) {
+                areaAlarmas.innerHTML = "<p>No hay alarmas configuradas.</p>";
+            } else {
+                actualizarListaAlarmas();
+            }
+        } else {
+            areaAlarmas.style.display = "none";
+        }
     });
+        
+        actualizarListaAlarmas();
+
 
     function verificarAlarmas() {
         let ahora = new Date();
