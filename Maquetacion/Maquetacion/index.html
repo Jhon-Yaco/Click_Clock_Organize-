@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Clock Organize</title>
+    <link rel="stylesheet" href="CSS/Style.css">
+
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2c3e50; /* Fondo oscuro */
+            color: white;
+            text-align: center;
+        }
+
+        /* Contenedor principal */
+        .contenedor-principal {
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto;
+            padding-top: 10px;
+        }
+
+        /* Imagen del logo minimizada y centrada */
+        .logo-img {
+            width: 100px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        /* Estilos para el título */
+        header.tittle_1 h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        /* Menú de navegación */
+        nav#menu {
+            margin-bottom: 15px;
+        }
+
+        nav#menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav#menu ul li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        nav#menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            border: 1px solid white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav#menu ul li a:hover {
+            background-color: #2980b9;
+        }
+
+        /* Contenido principal */
+        .contenido {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+            border-radius: 10px;
+            margin: 0 auto;
+            max-width: 400px;
+        }
+
+        /* Ajustes para pantallas móviles */
+        @media (max-width: 600px) {
+            .logo-img {
+                width: 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenedor-principal">
+        <!-- Logo centrado y minimizado -->
+        <img src="logo.png" alt="Logo de Click Clock Organize" class="logo-img">
+
+        <header class="tittle_1">
+            <h1>Click Clock Organize</h1>
+        </header>
+
+        <!-- Menú de navegación -->
+        <nav id="menu">
+            <ul>
+                <li><a href="Alarma.html">Alarma</a></li>
+                <li><a href="Temporizador.html">Temporizador</a></li>
+                <li><a href="Cronometro.html">Cronómetro</a></li>
+                <li><a href="Recordatorio.html">Recordatorio</a></li>
+            </ul>
+        </nav>
+
+        <!-- Sección de bienvenida -->
+        <div class="contenido">
+            <h2>Bienvenido a Click Clock Organize</h2>
+            <p>Administra tu tiempo con herramientas como alarmas, temporizadores, cronómetros y recordatorios.</p>
+            <p>Selecciona una opción del menú para comenzar.</p>
+        </div>
+    </div>
+</body>
+
+</html>

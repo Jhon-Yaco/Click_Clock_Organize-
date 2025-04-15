@@ -1,0 +1,13 @@
+document.addEventListener('DOMContentLoaded', function() {
+    let alarmaInterval;
+
+    document.getElementById('configurar-alarma').addEventListener('click', function() {
+        console.log('Click en Configurar Alarma'); // Agrega este console.log
+        // Resto del código...
+    });
+
+    document.getElementById('detener-alarma').addEventListener('click', function() {
+        console.log('Click en Detener Alarma'); // Agrega este console.log
+        // Resto del código...
+    });
+});
