@@ -1,0 +1,26 @@
+{
+  "name": "click-clock",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jhon-Yaco/Click_Clock_Organize-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jhon-Yaco/Click_Clock_Organize-/issues"
+  },
+  "homepage": "https://github.com/Jhon-Yaco/Click_Clock_Organize-#readme",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mariadb": "^3.4.1",
+    "mysql2": "^3.14.1"
+  }
+}
