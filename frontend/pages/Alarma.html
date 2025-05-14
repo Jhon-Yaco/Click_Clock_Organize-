@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarma - Click Clock Organize</title>
+    <link rel="stylesheet" href="../CSS/Style.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2c3e50; /* Fondo oscuro */
+            color: white;
+            text-align: center;
+        }
+
+        .temporizador-container {
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto;
+            padding-top: 10px;
+        }
+
+        .logo-img {
+            width: 100px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        header.tittle_1 h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        nav#menu {
+            margin-bottom: 15px;
+        }
+
+        nav#menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav#menu ul li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        nav#menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            border: 1px solid white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav#menu ul li a:hover {
+            background-color: #2980b9;
+        }
+
+        .temporizador-contenido {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            margin: 0 auto;
+            max-width: 400px;
+        }
+
+        .temporizador-config, .dias-semana, .temporizador-botones {
+            margin-bottom: 20px;
+        }
+
+        .temporizador-botones button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            font-size: 16px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .temporizador-botones button:hover {
+            background-color: #3498db;
+        }
+
+        @media (max-width: 600px) {
+            .logo-img {
+                width: 80px;
+            }
+
+            .temporizador-botones button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body class="temporizador-page">
+    <div class="temporizador-container">
+        <img src="logo.png" alt="Logo de Click Clock Organize" class="logo-img">
+        <header class="tittle_1">
+            <h1>Click Clock Organize</h1>
+        </header>
+
+        <nav id="menu">
+            <ul>
+                <li><a href="Alarma.html">Alarma</a></li>
+                <li><a href="Temporizador.html">Temporizador</a></li>
+                <li><a href="Cronometro.html">Cronómetro</a></li>
+                <li><a href="Recordatorio.html">Recordatorio</a></li>
+            </ul>
+        </nav>
+
+        <div class="temporizador-contenido">
+            <div class="temporizador-config">
+                <label for="hora-alarma">Hora de la Alarma:</label>
+                <input type="time" id="hora-alarma" name="hora-alarma">
+
+                <label for="tono-alarma">Tono de la Alarma:</label>
+                <select id="tono-alarma" name="tono-alarma">
+                    <option value="tono1.mp3">Tono 1</option>
+                    <option value="tono2.mp3">Tono 2</option>
+                </select>
+            </div>
+
+            <div class="dias-semana">
+                <label>Seleccionar días de la semana:</label>
+                <div>
+                    <input type="checkbox" id="lunes" value="lunes"><label for="lunes">Lunes</label>
+                    <input type="checkbox" id="martes" value="martes"><label for="martes">Martes</label>
+                    <input type="checkbox" id="miercoles" value="miercoles"><label for="miercoles">Miércoles</label>
+                    <input type="checkbox" id="jueves" value="jueves"><label for="jueves">Jueves</label>
+                    <input type="checkbox" id="viernes" value="viernes"><label for="viernes">Viernes</label>
+                    <input type="checkbox" id="sabado" value="sabado"><label for="sabado">Sábado</label>
+                    <input type="checkbox" id="domingo" value="domingo"><label for="domingo">Domingo</label>
+                </div>
+            </div>
+
+            <div class="temporizador-botones">
+                <button id="agregar-alarma">Agregar Alarma</button>
+                <button id="detener-alarma">Detener Alarma</button>
+                <button id="ver-alarmas">Ver Alarmas</button>
+                <button id="eliminar-alarma">Eliminar Alarmas</button>
+            </div>
+
+            <div id="area-alarmas"></div>
+        
+        </div>
+    </div>
+
+    <script src="alarma.js"></script>
+</body>
+</html>

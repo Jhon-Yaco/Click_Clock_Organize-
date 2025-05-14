@@ -1,0 +1,128 @@
+/* Estilos generales que afectan a todas las páginas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.tittle_1 {
+    text-align: center;
+    color: rgb(55, 29, 97);
+    background-color: hsl(191, 57%, 40%);
+    padding: 15px;
+}
+
+nav ul li {
+    background-color: #afafb3;
+    list-style: none;
+    display: inline;
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+}
+
+#menu {
+    align-items: center;
+    text-align: center;
+    margin-top: 5px;
+    padding: 25px;
+}
+
+/* Estilos específicos para la página de la alarma */
+body.alarma-page .alarma-container {
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body.alarma-page #area-alarmas {
+    margin-top: 20px;
+    text-align: left;
+}
+
+body.alarma-page #area-alarmas h2 {
+    color: rgb(55, 29, 97);
+}
+
+body.alarma-page #area-alarmas pre {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Agrega estilos personalizados para el cronómetro */
+.cronometro-page {
+    text-align: center;
+}
+
+#lista-recordatorios {
+    display: none;
+}
+
+#lista-alarmas {
+    display: none;
+}
+
+
+.cronometro-container {
+    margin: 50px auto; /* Centra el cronómetro en la página */
+    max-width: 400px; /* Define un ancho máximo para el cronómetro */
+}
+
+#cronometro-display {
+    font-size: 2em; /* Tamaño de fuente más grande */
+    margin-bottom: 20px; /* Espacio entre el cronómetro y los botones */
+}
+
+.cronometro-botones button {
+    font-size: 1.2em; /* Tamaño de fuente de los botones */
+    margin: 5px; /* Espaciado entre los botones */
+}
+
+
+/* Agrega estos estilos para uniformidad */
+body  {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Agrega estilos específicos para el temporizador */
+.temporizador-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.temporizador-config {
+    margin-bottom: 20px;
+}
+
+#temporizador-display {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.temporizador-botones button {
+    font-size: 1em;
+    margin: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}

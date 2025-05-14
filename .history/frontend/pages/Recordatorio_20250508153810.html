@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recordatorio - Click Clock Organize</title>
+    <link rel="stylesheet" href="../CSS/Style.css">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2c3e50; /* Fondo oscuro */
+            color: white;
+            text-align: center;
+        }
+
+        /* Contenedor principal ajustado */
+        .recordatorio-container {
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto;
+            padding-top: 10px;
+        }
+
+        /* Imagen del logo minimizada y centrada al inicio */
+        .logo-img {
+            width: 100px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px; /* Centrado y con un margen inferior */
+        }
+
+        /* Estilos para el título */
+        header.tittle_1 h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        /* Menú de navegación sin fondo gris y botones debajo del logo */
+        nav#menu {
+            margin-bottom: 15px;
+        }
+
+        nav#menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav#menu ul li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        nav#menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            border: 1px solid white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav#menu ul li a:hover {
+            background-color: #2980b9;
+        }
+
+        /* Contenido del recordatorio */
+        .recordatorio-contenido {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+            border-radius: 10px;
+            margin: 0 auto;
+            max-width: 400px;
+        }
+
+        /* Ajustes para inputs y botones */
+        .recordatorio-config, .recordatorio-botones {
+            margin-bottom: 20px;
+        }
+
+        .recordatorio-botones button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            font-size: 16px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .recordatorio-botones button:hover {
+            background-color: #3498db;
+        }
+
+        /* Ajustes para pantallas móviles */
+        @media (max-width: 600px) {
+            .logo-img {
+                width: 80px; /* Tamaño más pequeño en pantallas pequeñas */
+            }
+            .recordatorio-botones button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+
+    </style>
+</head>
+<body class="recordatorio-page">
+
+    <div class="recordatorio-container">
+        <!-- Logo minimizado y centrado -->
+        <img src="/frontend/imagenes/logo.png" alt="Logo de Click Clock Organize" class="logo-img">
+
+        <header class="tittle_1">
+            <h1>Click Clock Organize</h1>
+        </header>
+
+        <!-- Accesos a otras interfaces debajo del logo -->
+        <nav id="menu">
+            <ul>
+                <li><a href="Alarma.html">Alarma</a></li>
+                <li><a href="Temporizador.html">Temporizador</a></li>
+                <li><a href="Cronometro.html">Cronómetro</a></li>
+                <li><a href="Recordatorio.html">Recordatorio</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contenido específico del Recordatorio -->
+        <div class="recordatorio-contenido">
+            <div class="recordatorio-config">
+                <label for="mensaje-recordatorio">Mensaje:</label>
+                <input type="text" id="mensaje-recordatorio" placeholder="Escribe tu recordatorio">
+
+                <label for="fecha-recordatorio">Fecha:</label>
+                <input type="date" id="fecha-recordatorio">
+
+                <label for="hora-recordatorio">Hora:</label>
+                <input type="time" id="hora-recordatorio">
+            </div>
+            <div class="recordatorio-botones">
+                <button id="agregar-recordatorio">Agregar Recordatorio</button>
+                <button id="ver-recordatorios">Ver Recordatorios</button>
+                <button id="eliminar-recordatorios">Eliminar Recordatorios</button>
+            </div>
+
+            <ul id="lista-recordatorios"></ul>
+        </div>
+    </div>
+
+    <script src="./frontend/JS/recordatorio.js" type="text/javascript"></script>
+</body>/JS/
+</html>

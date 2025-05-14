@@ -1,0 +1,19 @@
+const mysql = require('mysql2');
+
+const db = mysql.createConnection({
+    host: 'localhost',
+    port: 3307, // ✅ Puerto correcto
+    user: 'root', // ⚠️ Ajusta según tu configuración
+    password: 'Sena_1', // ⚠️ Ajusta según tu configuración
+    database: 'click_clock'
+});
+
+db.connect(err => {
+    if (err) {
+        console.error('❌ Error de conexión a MySQL:', err);
+        return;
+    }
+    console.log('✅ Conectado a MySQL correctamente.');
+});
+
+module.exports = db;

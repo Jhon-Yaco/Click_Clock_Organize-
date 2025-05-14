@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recordatorio - Click Clock Organize</title>
+    <link rel="stylesheet" href="../CSS/Style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+        }
+
+        .recordatorio-container {
+            max-width: 400px;
+            margin: auto;
+            padding-top: 10px;
+        }
+
+        .logo-img {
+            width: 100px;
+            margin: 0 auto 10px;
+        }
+
+        .recordatorio-contenido {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            margin: auto;
+            max-width: 400px;
+        }
+
+        .recordatorio-botones button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .recordatorio-botones button:hover {
+            background-color: #3498db;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="recordatorio-container">
+        <img src="/frontend/imagenes/logo.png" alt="Logo de Click Clock Organize" class="logo-img">
+        <header class="tittle_1"><h1>Click Clock Organize</h1></header>
+
+        <nav id="menu">
+            <ul>
+                <li><a href="Alarma.html">Alarma</a></li>
+                <li><a href="Temporizador.html">Temporizador</a></li>
+                <li><a href="Cronometro.html">Cronómetro</a></li>
+                <li><a href="Recordatorio.html">Recordatorio</a></li>
+            </ul>
+        </nav>
+
+        <div class="recordatorio-contenido">
+            <div class="recordatorio-config">
+                <label for="mensaje-recordatorio">Mensaje:</label>
+                <input type="text" id="mensaje-recordatorio" placeholder="Escribe tu recordatorio">
+
+                <label for="fecha-recordatorio">Fecha:</label>
+                <input type="date" id="fecha-recordatorio">
+
+                <label for="hora-recordatorio">Hora:</label>
+                <input type="time" id="hora-recordatorio">
+            </div>
+
+            <div class="recordatorio-botones">
+                <button id="agregar-recordatorio">Agregar Recordatorio</button>
+                <button id="ver-recordatorios">Ver Recordatorios</button>
+                <button id="eliminar-recordatorios">Eliminar Recordatorios</button>
+            </div>
+
+            <ul id="lista-recordatorios"></ul>
+        </div>
+    </div>
+
+    <script src="../JS/recordatorio.js"></script>
+
+</body>
+</html>
