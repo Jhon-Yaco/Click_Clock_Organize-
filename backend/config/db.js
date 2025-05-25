@@ -1,19 +1,24 @@
-const mysql = require('mysql2');
+const mysql = require('mysql2/promise');
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
     host: 'localhost',
-    port: 3306, // ✅ Puerto correcto
-    user: 'root', // ⚠️ Ajusta según tu configuración
-    password: 'Sena_1', // ⚠️ Ajusta según tu configuración
-    database: 'click_clock'
+    user: 'root',
+    password: 'Sena_1',
+    database: 'click_clock',
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 });
 
-db.connect(err => {
-    if (err) {
+// 📌 Verificar conexión inicial y capturar errores
+db.getConnection()
+    .then(connection => {
+        console.log('✅ Conectado a MySQL correctamente.');
+        connection.release();
+    })
+    .catch(err => {
         console.error('❌ Error de conexión a MySQL:', err);
-        return;
-    }
-    console.log('✅ Conectado a MySQL correctamente.');
-});
+        process.exit(1); // 📌 Detener el servidor si la conexión falla
+    });
 
 module.exports = db;

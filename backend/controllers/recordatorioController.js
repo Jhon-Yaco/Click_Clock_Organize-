@@ -1,36 +1,44 @@
-exports.crearRecordatorio = (req, res) => {
-    console.log("Datos recibidos en el backend:", req.body); // ⚠️ Verificación de datos
-    res.json({ mensaje: "✅ Recordatorio guardado correctamente." });
+const Alarma = require('../models/alarmaModel');
+
+exports.crearAlarma = async (req, res) => {
+    console.log("📥 Datos recibidos en el backend:", req.body);
+    try {
+        const id = await Alarma.crearAlarma(req.body);
+        res.json({ mensaje: "✅ Alarma guardada correctamente.", id });
+    } catch (error) {
+        console.error("❌ Error al guardar la alarma:", error);
+        res.status(500).json({ error: error.message });
+    }
 };
 
-exports.obtenerRecordatorios = (req, res) => {
-    res.json({ mensaje: "📄 Aquí están los recordatorios." });
+exports.obtenerAlarmas = async (req, res) => {
+    try {
+        const alarmas = await Alarma.obtenerAlarmas();
+        res.json(alarmas);
+    } catch (error) {
+        console.error("❌ Error al obtener alarmas:", error);
+        res.status(500).json({ error: error.message });
+    }
 };
 
-exports.eliminarRecordatorio = (req, res) => {
-    console.log("Eliminando recordatorio:", req.body);
-    res.json({ mensaje: "🗑️ Recordatorio eliminado correctamente." });
+exports.eliminarAlarma = async (req, res) => {
+    console.log("🗑️ Eliminando alarma:", req.params.id);
+    try {
+        await Alarma.eliminarAlarma(req.params.id);
+        res.json({ mensaje: "✅ Alarma eliminada correctamente." });
+    } catch (error) {
+        console.error("❌ Error al eliminar alarma:", error);
+        res.status(500).json({ error: error.message });
+    }
 };
 
-exports.eliminarTodosPorUsuario = (req, res) => {
-    console.log("Eliminando todos los recordatorios del usuario:", req.body.usuario_id);
-    res.json({ mensaje: "🚮 Todos los recordatorios eliminados." });
-};
-exports.crearRecordatorio = (req, res) => {
-    console.log("Datos recibidos en el backend:", req.body); // ⚠️ Verificación de datos
-    res.json({ mensaje: "✅ Recordatorio guardado correctamente." });
-};
-
-exports.obtenerRecordatorios = (req, res) => {
-    res.json({ mensaje: "📄 Aquí están los recordatorios." });
-};
-
-exports.eliminarRecordatorio = (req, res) => {
-    console.log("Eliminando recordatorio:", req.body);
-    res.json({ mensaje: "🗑️ Recordatorio eliminado correctamente." });
-};
-
-exports.eliminarTodosPorUsuario = (req, res) => {
-    console.log("Eliminando todos los recordatorios del usuario:", req.body.usuario_id);
-    res.json({ mensaje: "🚮 Todos los recordatorios eliminados." });
+exports.eliminarTodasPorUsuario = async (req, res) => {
+    console.log("🚮 Eliminando todas las alarmas del usuario:", req.params.usuario_id);
+    try {
+        await Alarma.eliminarTodasPorUsuario(req.params.usuario_id);
+        res.json({ mensaje: "✅ Todas las alarmas han sido eliminadas." });
+    } catch (error) {
+        console.error("❌ Error al eliminar todas las alarmas:", error);
+        res.status(500).json({ error: error.message });
+    }
 };
